@@ -22,10 +22,10 @@ public class WebTest {
 
     @BeforeEach
     public void setUp() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--no-sandbox");
-//        options.addArguments("--headless");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
         driver = new ChromeDriver();
 
     }
@@ -39,7 +39,6 @@ public class WebTest {
     @Test
     public void shouldSendForm() {
         driver.get("http://localhost:9999/");
-        System.out.println();
         driver.findElement(By.cssSelector("[type='text']")).sendKeys("Давид");
         driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+79993336666");
         driver.findElement(By.cssSelector(".checkbox__text")).click();
