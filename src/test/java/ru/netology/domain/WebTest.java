@@ -12,13 +12,13 @@ public class WebTest {
     private WebDriver driver;
 
     @BeforeAll
-    public static void setUpAll(String[] args) {
+    public static void setUpAll() {
         System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
 
     }
 
     @BeforeEach
-    public void setUp(String[] args) {
+    public void setUp() {
         driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
